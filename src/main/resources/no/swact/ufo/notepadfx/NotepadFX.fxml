@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.swact.ufo.notepadfx.NotepadFX">
+   <top>
+        <MenuBar BorderPane.alignment="CENTER">
+           <menus>
+               <Menu mnemonicParsing="false" text="File">
+                  <items>
+                      <MenuItem fx:id="open" mnemonicParsing="false" text="Open">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                          </accelerator>
+                      </MenuItem>
+                      <MenuItem fx:id="save" mnemonicParsing="false" text="Save">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                          </accelerator>
+                      </MenuItem>
+                      <MenuItem fx:id="close" mnemonicParsing="false" text="Close">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                          </accelerator>
+                      </MenuItem>
+                  </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Format">
+                  <items>
+                      <CheckMenuItem mnemonicParsing="false" text="Text wrap" />
+                      <Menu fx:id="fontSize" mnemonicParsing="false" text="Font size">
+                         <items>
+                             <RadioMenuItem mnemonicParsing="false" text="10">
+                                 <toggleGroup>
+                                     <ToggleGroup fx:id="fontSizeGroup" />
+                                 </toggleGroup>
+                             </RadioMenuItem>
+                             <RadioMenuItem mnemonicParsing="false" selected="true" text="12" toggleGroup="$fontSizeGroup" />
+                             <RadioMenuItem mnemonicParsing="false" text="14" toggleGroup="$fontSizeGroup" />
+                             <RadioMenuItem mnemonicParsing="false" text="16" toggleGroup="$fontSizeGroup" />
+                             <RadioMenuItem mnemonicParsing="false" text="18" toggleGroup="$fontSizeGroup" />
+                             <RadioMenuItem mnemonicParsing="false" text="20" toggleGroup="$fontSizeGroup" />
+                         </items>
+                      </Menu>
+                  </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                      <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+               </Menu>
+           </menus>
+        </MenuBar>
+   </top>
+   <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="400.0" prefViewportWidth="600.0" BorderPane.alignment="CENTER">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+           <content>
+               <TextArea fx:id="textArea" BorderPane.alignment="CENTER" />
+           </content>
+        </ScrollPane>
+   </center>
+</BorderPane>
