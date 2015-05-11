@@ -55,6 +55,8 @@ public class NotepadFX extends Application {
 
             if (response == ButtonType.CANCEL) {
                 event.consume();
+            } else {
+                Platform.exit();
             }
         });
     }

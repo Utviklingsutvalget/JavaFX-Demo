@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.swact.ufo.notepadfx.NotepadFX">
+<BorderPane prefHeight="600.0" stylesheets="/no/swact/ufo/notepadfx/notepadfx.css" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.swact.ufo.notepadfx.NotepadFX">
    <top>
         <MenuBar BorderPane.alignment="CENTER">
            <menus>
