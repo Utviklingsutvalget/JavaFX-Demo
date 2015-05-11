@@ -11,17 +11,17 @@
            <menus>
                <Menu mnemonicParsing="false" text="File">
                   <items>
-                      <MenuItem fx:id="open" mnemonicParsing="false" text="Open">
+                      <MenuItem fx:id="openFile" mnemonicParsing="false" text="Open">
                           <accelerator>
                               <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                           </accelerator>
                       </MenuItem>
-                      <MenuItem fx:id="save" mnemonicParsing="false" text="Save">
+                      <MenuItem fx:id="saveFile" mnemonicParsing="false" text="Save">
                           <accelerator>
                               <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                           </accelerator>
                       </MenuItem>
-                      <MenuItem fx:id="close" mnemonicParsing="false" text="Close">
+                      <MenuItem fx:id="closeApplication" mnemonicParsing="false" text="Close">
                           <accelerator>
                               <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                           </accelerator>
@@ -31,7 +31,7 @@
                <Menu mnemonicParsing="false" text="Format">
                   <items>
                       <CheckMenuItem mnemonicParsing="false" text="Text wrap" />
-                      <Menu fx:id="fontSize" mnemonicParsing="false" text="Font size">
+                      <Menu mnemonicParsing="false" text="Font size">
                          <items>
                              <RadioMenuItem mnemonicParsing="false" text="10">
                                  <toggleGroup>

@@ -1,14 +1,25 @@
 package no.swact.ufo.notepadfx;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.net.URL;
 
 public class NotepadFX extends Application {
+
+    @FXML
+    private TextArea textArea;
+    @FXML
+    private ToggleGroup fontSizeGroup;
+
 
     public static void main(String[] args) {
         Application.launch(NotepadFX.class);
@@ -18,8 +29,32 @@ public class NotepadFX extends Application {
     public void start(final Stage primaryStage) throws Exception {
         URL resource = ClassLoader.getSystemClassLoader().getResource("no/swact/ufo/notepadfx/NotepadFX.fxml");
         assert resource != null;
-        Parent root = FXMLLoader.load(resource);
+        FXMLLoader loader = new FXMLLoader(resource);
+        Parent root = loader.load();
+        NotepadFX controller = loader.getController();
         primaryStage.setScene(new Scene(root));
+        controller.setup();
         primaryStage.show();
+    }
+
+    private void setup() {
+        textArea.setFont(getFontFromMenuItem((RadioMenuItem) fontSizeGroup.getSelectedToggle()));
+        createFontListener();
+    }
+
+    private void createFontListener() {
+        fontSizeGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null) {
+                return;
+            }
+            final Font value = getFontFromMenuItem((RadioMenuItem) newValue);
+            textArea.setFont(value);
+        });
+    }
+
+    private Font getFontFromMenuItem(final RadioMenuItem newValue) {
+        final String text = newValue.getText();
+        final Double size = Double.valueOf(text);
+        return new Font(size);
     }
 }
