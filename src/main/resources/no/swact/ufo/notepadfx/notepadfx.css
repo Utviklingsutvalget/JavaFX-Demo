@@ -1,4 +1,7 @@
 TextArea {
-    -fx-background-color: red;
-    color: black;
+    -fx-background-color: deeppink;
+}
+
+#saveFile {
+    -fx-background-color: black;
 }

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane prefHeight="600.0" stylesheets="/no/swact/ufo/notepadfx/notepadfx.css" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.swact.ufo.notepadfx.NotepadFX">
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="/no/swact/ufo/notepadfx/notepadfx.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.swact.ufo.notepadfx.NotepadFX">
    <top>
         <MenuBar BorderPane.alignment="CENTER">
            <menus>
@@ -26,6 +30,7 @@
                               <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                           </accelerator>
                       </MenuItem>
+                  <CustomMenuItem mnemonicParsing="false" text="Unspecified Action" />
                   </items>
                </Menu>
                <Menu mnemonicParsing="false" text="Format">
@@ -47,7 +52,7 @@
                       </Menu>
                   </items>
                </Menu>
-               <Menu mnemonicParsing="false" text="Help">
+               <Menu mnemonicParsing="false" text="About">
                   <items>
                       <MenuItem mnemonicParsing="false" text="About" />
                   </items>
@@ -65,4 +70,15 @@
            </content>
         </ScrollPane>
    </center>
+   <bottom>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu fx:id="progress" mnemonicParsing="false" visible="false">
+               <graphic>
+                  <ProgressIndicator prefHeight="20.0" />
+               </graphic>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </bottom>
 </BorderPane>
